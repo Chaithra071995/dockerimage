@@ -1,8 +1,6 @@
 FROM ubuntu:22.04
 MAINTAINER chaithra@gmail.com
-RUN apt-get update -y
-RUN apt-get install –y nginx 
-RUN systemctl start nginx.service
+RUN apt-get update && apt-get upgrade -y
 RUN useradd sktech
 EXPOSE 8080
-CMD [“echo”,”Image created”] 
+CMD ["nginx" ,"g" ,"daemon off;"] 
